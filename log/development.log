@@ -1332,3 +1332,23 @@ Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-06-30 16:03:59
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2015-06-30 19:04:27.936979"], ["updated_at", "2015-06-30 19:04:27.936979"]]
   [1m[36m (16.5ms)[0m  [1mcommit transaction[0m
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /home/saasbook/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
+
+
+Started GET "/movies/" for 127.0.0.1 at 2015-07-01 16:31:40 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (6.8ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (76.4ms)
+Completed 200 OK in 732ms (Views: 722.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2015-07-01 16:31:42 -0300
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-07-01 16:31:42 -0300
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-07-01 16:31:42 -0300
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-07-01 16:31:42 -0300

@@ -89,7 +89,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    libv8 (3.16.14.7)
+    libv8 (3.16.14.8)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
