@@ -1961,3 +1961,525 @@ Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-07-09 18:5
 
 
 Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-07-09 18:55:46 -0300
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /Users/siddhantpuri/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
+
+
+Started GET "/assets/rails.png" for ::1 at 2015-07-28 12:04:40 -0700
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:04:42 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (31.9ms)
+Completed 200 OK in 361ms (Views: 353.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:04:43 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:04:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:04:43 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:04:43 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:04:43 -0700
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /Users/siddhantpuri/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
+
+
+Started GET "/assets/rails.png" for ::1 at 2015-07-28 12:22:58 -0700
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:23:01 -0700
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 1.6ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f8f3cb157d8>):
+  app/models/movie.rb:2:in `<class:Movie>'
+  app/models/movie.rb:1:in `<top (required)>'
+  app/controllers/movies_controller.rb:10:in `index'
+
+
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.3ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (77.0ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (183.8ms)
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:23:02 -0700
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f8f3fd498a8>):
+  app/models/movie.rb:2:in `<class:Movie>'
+  app/models/movie.rb:1:in `<top (required)>'
+  app/controllers/movies_controller.rb:10:in `index'
+
+
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.2ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.3ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/siddhantpuri/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (142.2ms)
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /Users/siddhantpuri/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
+
+
+Started GET "/assets/rails.png" for ::1 at 2015-07-28 12:26:43 -0700
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:26:44 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (3.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (47.0ms)
+Completed 200 OK in 177ms (Views: 143.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:26:44 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:26:44 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:26:44 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:26:44 -0700
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:27:49 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.9ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (31.8ms)
+Completed 200 OK in 59ms (Views: 55.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:27:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:27:49 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:27:49 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:27:49 -0700
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:27:50 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:27:50 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:27:50 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:27:50 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:27:50 -0700
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /Users/siddhantpuri/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:27:58 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (3.7ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (25.0ms)
+Completed 200 OK in 368ms (Views: 281.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:27:59 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (8.6ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:27:59 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:27:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:27:59 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:27:59 -0700
+
+
+Started GET "/movies/1" for ::1 at 2015-07-28 12:28:01 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:02 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:02 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:02 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:02 -0700
+
+
+Started GET "/movies/9" for ::1 at 2015-07-28 12:28:05 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered movies/show.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:05 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:05 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:05 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:05 -0700
+
+
+Started GET "/movies/2" for ::1 at 2015-07-28 12:28:10 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:10 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:10 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:10 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:10 -0700
+
+
+Started DELETE "/movies/2" for ::1 at 2015-07-28 12:28:11 -0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vZUZ54RDgWu6ZlhR1FurOl8PaE3JzIevhYiuYxg8RFI8iJo9b7x79lXSq6sImLkKrAWLxPWNv3q9YPk8W5tfOg==", "id"=>"2"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 8ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:28:11 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:11 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:11 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:11 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:11 -0700
+
+
+Started GET "/movies/3" for ::1 at 2015-07-28 12:28:13 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 34ms (Views: 27.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:13 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:13 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:13 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:13 -0700
+
+
+Started GET "/movies/3/edit" for ::1 at 2015-07-28 12:28:14 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (1.0ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (54.2ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:14 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:14 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:14 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:14 -0700
+
+
+Started PUT "/movies/3" for ::1 at 2015-07-28 12:28:16 -0700
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N67hEqwW0VI4lnIzRYOMi3IVuB1ZBGmQmu31ik1a6Tu2s2LIR+krz9cigcmZQJ67gR9blGVFUUWiBaLVDv3yUw==", "movie"=>{"title"=>"The Terminator", "rating"=>"R", "release_date(1i)"=>"1984", "release_date(2i)"=>"10", "release_date(3i)"=>"26"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies/3
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/3" for ::1 at 2015-07-28 12:28:16 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:16 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:16 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:16 -0700
+
+
+Started GET "/movies/3/edit" for ::1 at 2015-07-28 12:28:18 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (1.7ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 60ms (Views: 55.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:18 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:18 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:18 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:18 -0700
+
+
+Started PUT "/movies/3" for ::1 at 2015-07-28 12:28:20 -0700
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NBQ0GXD6ZVeOscE8W5zt2pxwnz5J97YMhuM063ihhw61CbfDmwWfymEFMsaHX//qb3p8t3W2jtm+C2O0OwacZg==", "movie"=>{"title"=>"The Terminator", "rating"=>"R", "release_date(1i)"=>"1984", "release_date(2i)"=>"10", "release_date(3i)"=>"26"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[35mMovie Load (0.8ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies/3
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/movies/3" for ::1 at 2015-07-28 12:28:20 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:20 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:20 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:20 -0700
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:28:21 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:28:21 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:28:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:28:21 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:28:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.828248"], ["updated_at", "2015-07-28 19:30:25.828248"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.833737"], ["updated_at", "2015-07-28 19:30:25.833737"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.835833"], ["updated_at", "2015-07-28 19:30:25.835833"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.837870"], ["updated_at", "2015-07-28 19:30:25.837870"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.839763"], ["updated_at", "2015-07-28 19:30:25.839763"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.841702"], ["updated_at", "2015-07-28 19:30:25.841702"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.843786"], ["updated_at", "2015-07-28 19:30:25.843786"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.845730"], ["updated_at", "2015-07-28 19:30:25.845730"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.847693"], ["updated_at", "2015-07-28 19:30:25.847693"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2015-07-28 19:30:25.849461"], ["updated_at", "2015-07-28 19:30:25.849461"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /Users/siddhantpuri/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
+
+
+Started GET "/movies" for ::1 at 2015-07-28 12:30:41 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (32.6ms)
+Completed 200 OK in 293ms (Views: 255.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:30:41 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:30:41 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:30:41 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:30:41 -0700
+
+
+Started GET "/movies/1" for ::1 at 2015-07-28 12:30:44 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:30:44 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:30:44 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:30:44 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:30:44 -0700
+
+
+Started GET "/movies/1/edit" for ::1 at 2015-07-28 12:30:45 -0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/edit.html.haml within layouts/application (27.7ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:30:45 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:30:45 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:30:45 -0700
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:30:45 -0700
+
+
+Started PUT "/movies/1" for ::1 at 2015-07-28 12:30:51 -0700
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zx/d8JgRJUkaUzH1J/bGeAgUAi4XiwcbqzGPow1f3XxOAl4qc+7f1PXnwg/7NdRI+x7hpyvKP86T2dj8TvjGFA==", "movie"=>{"title"=>"The Matrix", "rating"=>"R", "release_date(1i)"=>"2015", "release_date(2i)"=>"6", "release_date(3i)"=>"26"}, "commit"=>"Update Movie Info", "id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/movies/1" for ::1 at 2015-07-28 12:30:51 -0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-07-28 12:30:51 -0700
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:30:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:30:51 -0700
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-07-28 12:30:51 -0700

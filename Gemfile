@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'haml'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,20 +31,21 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
 group :production do
 gem 'pg'
 end
 
 group :development, :test do
 
-  gem 'cucumber-rails', '1.4.2'
+  gem 'cucumber-rails', '1.4.2', :require => false
   gem 'rspec-rails', '3.3.2'
   gem 'capybara', '2.4.4'
   gem 'database_cleaner', '1.4.1'
   gem 'ZenTest', '4.11.0'
-  gem 'protected_attributes'
-  gem 'haml'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  #gem 'protected_attributes'
+  gem 'sqlite3'
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
