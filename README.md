@@ -1,8 +1,6 @@
 Modifying RottenPotatoes
 ========================
 
-[![Build Status](https://magnum.travis-ci.com/saasbook/hw-rails-intro-ci.svg?token=CPXPCn5Dy1cwCKsavtqL&branch=master)](https://magnum.travis-ci.com/saasbook/hw-rails-intro-ci)
-
 # Rails Intro: add features to RottenPotatoes
 
 In this homework you will add a feature to an existing simple Rails app
