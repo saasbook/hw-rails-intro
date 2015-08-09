@@ -132,7 +132,7 @@ css table#movies th.hilite {
 
 The result should look something like this:
 
-!(https://github.com/saasbook/hw-rails-intro/blob/master/table-header-screenshot.png)
+![](https://github.com/saasbook/hw-rails-intro/blob/master/table-header-screenshot.png)
 
 **IMPORTANT for grading purposes:**
 
@@ -181,7 +181,7 @@ Enhance RottenPotatoes as follows. At the top of the All Movies listing,
 add some checkboxes that allow the user to filter the list to show only
 movies with certain MPAA ratings: 
 
-!(https://github.com/saasbook/hw-rails-intro/blob/master/filter-screenshot.png)
+![](https://github.com/saasbook/hw-rails-intro/blob/master/filter-screenshot.png)
 
 When the Refresh button is pressed, the list of movies is redisplayed
 showing only those movies whose ratings were checked. 
