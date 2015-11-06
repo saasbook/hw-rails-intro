@@ -94,10 +94,11 @@ Finally, we deploy our app to Heroku:
     Please type 'yes' or 'no':
 
 Is the app running on Heroku?  No, because just as we ran `rake
-db:setup` to do first-time database creation locally, we must also cause
+db:migrate` and `rake db:seed` to do first-time database creation locally, we must also cause
 a database to be created on the Heroku side:
 
-`heroku run rake db:setup`
+`heroku run rake db:migrate`
+`heroku run rake db:seed`
 
 Now you should be able to navigate to your app's URL.  `heroku open`
 opens your browser to that URL in case you forgot it.
