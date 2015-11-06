@@ -98,6 +98,7 @@ db:migrate` and `rake db:seed` to do first-time database creation locally, we mu
 a database to be created on the Heroku side:
 
 `heroku run rake db:migrate`
+and
 `heroku run rake db:seed`
 
 Now you should be able to navigate to your app's URL.  `heroku open`
