@@ -127,7 +127,7 @@ the appropriate table heading to `hilite`, and pasting this simple CSS
 into RottenPotatoes `app/assets/stylesheets/default.css` file:
 
 ```
-css table#movies th.hilite {
+table#movies th.hilite {
   background-color: yellow;
 }
 ```
