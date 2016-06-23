@@ -18,8 +18,7 @@ changed in each file since your last “good” commit.
 ## Preparation: get RottenPotatoes running locally
 
 The actual RottenPotatoes starter app you will use is in another public
-repo: `saasbook/rottenpotatoes-rails-intro`.  Fork that repo, then clone
-your fork onto your development computer:
+repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
 
 `git clone git@github.com:`yourusername`/rottenpotatoes-rails-intro`
 
