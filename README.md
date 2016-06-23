@@ -187,7 +187,7 @@ at returning collections of rows in sorted order according to one or
 more attributes. Before you rush to sort the collection returned from
 the database, look at the
 [documentation](http://api.rubyonrails.org/v4.2.1/) for
-`ActiveRecord.find` and see if you can get the database to do the work for you.
+`ActiveRecord.where` and see if you can get the database to do the work for you.
 
 * Don't put code in your views! The view shouldn't have to sort the
 collection itself--its job is just to show stuff. The controller should
