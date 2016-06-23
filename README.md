@@ -68,7 +68,7 @@ other available Rake tasks)</summary>
 ------
 
 At this point you should be able to run the app locally (`rails server`)
-and navigating to `http://localhost:3000/movies` in your browser.  If you are using c9, use 'rails s -p $PORT -b $IP' and navigate to the link generated within c9.
+and navigating to `http://localhost:3000/movies` in your browser.  If you are using c9, use `rails s -p $PORT -b $IP` and navigate to the link generated within c9.
 
 ## Preparation: deploy to Heroku
 
