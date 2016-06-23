@@ -20,37 +20,49 @@ changed in each file since your last “good” commit.
 The actual RottenPotatoes starter app you will use is in another public
 repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
 
-`git clone git@github.com:saasbook/rottenpotatoes-rails-intro`
+`$ git clone git@github.com:saasbook/rottenpotatoes-rails-intro`
 
 Whenever you start working on a Rails project, the first thing you
 should do is to run Bundler, to make sure all the app's gems are
 installed.  Switch to the app's root directory (presumably
-`rails-intro`) and run `bundle install --without production` (you only
+`rottenpotatoes-rails-intro`) and run `bundle install --without production` (you only
 need to specify `--without production` the first time, as this setting
 will be remembered on future runs of Bundler for this project).
 
 Finally, get the local database created:
 
-`rake db:migrate`
+`$ rake db:migrate`
 
-* Self-check: how does Rails decide where and how to create the
-development database?  (Hint: check the `db` subdirectory)
+#### Self Check Questions (click triangle to check your answer)
 
-This creates a local development database and
+<details>
+  <summary>How does Rails decide where and how to create the
+development database?  (Hint: check the `db` subdirectory)</summary>
+  <p><blockquote>This creates a local development database and
 runs the migrations to create the app's schema.  It also creates the
 file `db/schema.rb` to reflect the latest database schema.  **You should
-place this file under version control.** 
+place this file under version control.** </blockquote></p>
+</details>
 
-* Self-check: what tables got created by the migrations?
+<details>
+  <summary>What tables got created by the migrations?</summary>
+  <p><blockquote>The Movies tabls</blockquote></p>
+</details>
 
-...And insert "seed data" into the database--initial data items that the
+
+Now insert "seed data" into the database--initial data items that the
 app needs to run:
 
-`rake db:seed`
+`$ rake db:seed`
 
-* Self-check: what seed data was inserted and where was it specified?
+#### Self Check Question (click triangle to check your answer)
+
+<details>
+  <summary>What seed data was inserted and where was it specified?
 (Hint: `rake -T db:seed` explains the seed task; `rake -T` explains
-other available Rake tasks)
+other available Rake tasks)</summary>
+  <p><blockquote>A set of movie data which is specified in `db/seeds.rb`</blockquote></p>
+</details>
 
 At this point you should be able to run the app locally (`rails server`)
 and navigating to `http://localhost:3000/movies` in your browser.  If you are using c9, use 'rails s -p $PORT -b $IP' and navigate to the link generated within c9.
