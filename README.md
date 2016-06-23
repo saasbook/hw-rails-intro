@@ -33,7 +33,7 @@ Finally, get the local database created:
 
 `$ rake db:migrate`
 
-#### Self Check Questions (click triangle to check your answer)
+##### Self Check Questions (click triangle to check your answer)
 
 <details>
   <summary>How does Rails decide where and how to create the
@@ -46,16 +46,17 @@ place this file under version control.** </blockquote></p>
 
 <details>
   <summary>What tables got created by the migrations?</summary>
-  <p><blockquote>The Movies tabls</blockquote></p>
+  <p><blockquote>The Movies table</blockquote></p>
 </details>
 
+------
 
 Now insert "seed data" into the database--initial data items that the
 app needs to run:
 
 `$ rake db:seed`
 
-#### Self Check Question (click triangle to check your answer)
+##### Self Check Question
 
 <details>
   <summary>What seed data was inserted and where was it specified?
@@ -63,6 +64,8 @@ app needs to run:
 other available Rake tasks)</summary>
   <p><blockquote>A set of movie data which is specified in `db/seeds.rb`</blockquote></p>
 </details>
+
+------
 
 At this point you should be able to run the app locally (`rails server`)
 and navigating to `http://localhost:3000/movies` in your browser.  If you are using c9, use 'rails s -p $PORT -b $IP' and navigate to the link generated within c9.
