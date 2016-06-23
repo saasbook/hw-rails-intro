@@ -203,7 +203,7 @@ and deploy them to check that they work on Heroku
 before moving on to the next section:
 
 ```sh
-$ git commit -a -m "hw 2 part 1 complete"
+$ git commit -a -m "part 1 complete"
 $ git push heroku master
 ```
 
@@ -300,7 +300,7 @@ changes you have made so far to git, deploy them to Heroku and check
 that they work on Heroku before moving on to the next section:
 
 ```sh
-$ git commit -a -m "hw 2 part 2 complete"
+$ git commit -a -m "part 2 complete"
 $ git push heroku master
 ```
 
@@ -359,7 +359,7 @@ this, use `flash.keep` right before your additional redirect.
 Deploy to Heroku by following the same process as before:
 
 ```sh
-$ git commit -a -m "hw 2 part 3 complete"
+$ git commit -a -m "part 3 complete"
 $ git push heroku master
 ```
 
