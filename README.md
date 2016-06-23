@@ -186,8 +186,8 @@ by Rails and available in the `params[]` hash.
 at returning collections of rows in sorted order according to one or
 more attributes. Before you rush to sort the collection returned from
 the database, look at the
-[documentation](http://api.rubyonrails.org/v4.2.1/) for
-`ActiveRecord.find` and see if you can get the database to do the work for you.
+[documentation](http://api.rubyonrails.org/v4.2.6/) for
+`ActiveRecord.order` and see if you can get the database to do the work for you.
 
 * Don't put code in your views! The view shouldn't have to sort the
 collection itself--its job is just to show stuff. The controller should
@@ -258,7 +258,7 @@ don't care about the values in this case (checkboxes that weren't
 checked don't appear in the `params` hash at all).
 
 Regarding (ii), you'll probably end up replacing `Movie.all` in the
-controller method with `Movie.find`, which has various options to help you
+controller method with `Movie.where`, which has various options to help you
 restrict the database query. 
 
 ## IMPORTANT for grading purposes
@@ -299,9 +299,9 @@ your Heroku deployment URL in part 3.  But you can commit all the
 changes you have made so far to git, deploy them to Heroku and check
 that they work on Heroku before moving on to the next section:
 
-```
-git commit -a -m "hw 2 part 2 complete"
-git push heroku master
+```sh
+$ git commit -a -m "hw 2 part 2 complete"
+$ git push heroku master
 ```
 
 # Part 3: Remember the sorting and filtering settings (70 points)
@@ -358,9 +358,9 @@ this, use `flash.keep` right before your additional redirect.
 
 Deploy to Heroku by following the same process as before:
 
-```
-git commit -a -m "hw 2 part 3 complete"
-git push heroku master
+```sh
+$ git commit -a -m "hw 2 part 3 complete"
+$ git push heroku master
 ```
 
 # How to submit when you're all done
