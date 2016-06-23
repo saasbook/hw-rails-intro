@@ -20,7 +20,7 @@ changed in each file since your last “good” commit.
 The actual RottenPotatoes starter app you will use is in another public
 repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
 
-`git clone git@github.com:`yourusername`/rottenpotatoes-rails-intro`
+`git clone git@github.com:saasbook/rottenpotatoes-rails-intro`
 
 Whenever you start working on a Rails project, the first thing you
 should do is to run Bundler, to make sure all the app's gems are
