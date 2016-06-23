@@ -20,7 +20,9 @@ changed in each file since your last “good” commit.
 The actual RottenPotatoes starter app you will use is in another public
 repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
 
-`$ git clone git@github.com:saasbook/rottenpotatoes-rails-intro`
+```sh
+$ git clone git@github.com:saasbook/rottenpotatoes-rails-intro
+```
 
 Whenever you start working on a Rails project, the first thing you
 should do is to run Bundler, to make sure all the app's gems are
@@ -31,7 +33,9 @@ will be remembered on future runs of Bundler for this project).
 
 Finally, get the local database created:
 
-`$ rake db:migrate`
+```sh
+$ rake db:migrate
+```
 
 ##### Self Check Questions (click triangle to check your answer)
 
@@ -54,7 +58,9 @@ place this file under version control.** </blockquote></p>
 Now insert "seed data" into the database--initial data items that the
 app needs to run:
 
-`$ rake db:seed`
+```sh
+$ rake db:seed
+```
 
 ##### Self Check Question
 
@@ -79,7 +85,7 @@ account](http://heroku.com).  Then set up `ssh` keys to securely
 communicate with Heroku for app deployments.  The three basic commands
 you need are the following, but see the Heroku page for more details.
 
-```
+```sh
 $ ssh-keygen -t rsa
 $ heroku login
 $ heroku keys:add
@@ -88,7 +94,9 @@ $ heroku keys:add
 Once your keys are set up (a one-time process), you should be able to create an "app
 container" on Heroku into which you'll deploy RottenPotatoes:
 
-`$ heroku create`
+```sh
+$ heroku create
+```
 
 Heroku will assign your app a whimsical name such as
 `luminous-coconut-237`; once your app is deployed, you would access it
@@ -97,7 +105,9 @@ Heroku website if you want to change the name of your app.
 
 Finally, we deploy our app to Heroku:
 
-`$ git push heroku master`
+```sh
+$ git push heroku master
+```
 
 (It is normal to see the following warning the first time---answer
 "yes", and in the future you shouldn't see it anymore:)
@@ -111,11 +121,15 @@ Is the app running on Heroku?  No, because just as we ran `rake
 db:migrate` and `rake db:seed` to do first-time database creation locally, we must also cause
 a database to be created on the Heroku side:
 
-`$ heroku run rake db:migrate`
+```sh
+$ heroku run rake db:migrate
+```
 
 and
 
-`$ heroku run rake db:seed`
+```sh
+$ heroku run rake db:seed
+```
 
 Now you should be able to navigate to your app's URL.  `heroku open`
 opens your browser to that URL in case you forgot it.
@@ -142,7 +156,7 @@ controller variables that are used to conditionally set the CSS class of
 the appropriate table heading to `hilite`, and pasting this simple CSS
 into RottenPotatoes `app/assets/stylesheets/default.css` file:
 
-```
+```css
 table#movies th.hilite {
   background-color: yellow;
 }
@@ -188,9 +202,9 @@ For now, commit all the changes you have made so far,
 and deploy them to check that they work on Heroku
 before moving on to the next section:
 
-```
-git commit -a -m "hw 2 part 1 complete"
-git push heroku master
+```sh
+$ git commit -a -m "hw 2 part 1 complete"
+$ git push heroku master
 ```
 
 # Part 2: Filter the list of movies by rating (15 points)
