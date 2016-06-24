@@ -15,7 +15,7 @@ changed in each file since your last “good” commit.
 
 **Remember, commit early and often!**
 
-## Part -1: Preparation: get RottenPotatoes running locally
+## Part 0 (A): Preparation: get RottenPotatoes running locally
 
 The actual RottenPotatoes starter app you will use is in another public
 repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
@@ -68,7 +68,7 @@ other available Rake tasks)</summary>
 At this point you should be able to run the app locally (`rails server`)
 and navigating to `http://localhost:3000/movies` in your browser.  If you are using c9, use `rails s -p $PORT -b $IP` and navigate to the link generated within c9.
 
-## Part 0: Preparation: deploy to Heroku
+## Part 0 (B): Preparation: deploy to Heroku
 
 If you have deployed to Heroku before, just create a new app container
 with `heroku create`.  If this is your first time deploying to Heroku,
