@@ -94,3 +94,5 @@ that they work on Heroku before moving on to the next section:
 $ git commit -a -m "part 2 complete"
 $ git push heroku master
 ```
+
+Next: [Part 3: Remember the sorting and filtering settings](part_3.md)
