@@ -66,3 +66,5 @@ before moving on to the next section:
 $ git commit -a -m "part 1 complete"
 $ git push heroku master
 ```
+
+Next: [Part 2: Filter the list of movies by rating](part_2.md)
