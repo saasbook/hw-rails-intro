@@ -15,7 +15,7 @@ changed in each file since your last “good” commit.
 
 **Remember, commit early and often!**
 
-## Preparation: get RottenPotatoes running locally
+## Part -1: Preparation: get RottenPotatoes running locally
 
 The actual RottenPotatoes starter app you will use is in another public
 repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
@@ -37,10 +37,8 @@ Finally, get the local database created:
 $ rake db:migrate
 ```
 
-##### Self Check Questions (click triangle to check your answer)
-
 <details>
-  <summary>How does Rails decide where and how to create the
+  <summary><strong>Self Check Question:</strong> How does Rails decide where and how to create the
 development database?  (Hint: check the `db` subdirectory)</summary>
   <p><blockquote>This creates a local development database and
 runs the migrations to create the app's schema.  It also creates the
@@ -49,11 +47,9 @@ place this file under version control.** </blockquote></p>
 </details>
 
 <details>
-  <summary>What tables got created by the migrations?</summary>
+  <summary><strong>Self Check Question:</strong> What tables got created by the migrations?</summary>
   <p><blockquote>The Movies table</blockquote></p>
 </details>
-
-------
 
 Now insert "seed data" into the database--initial data items that the
 app needs to run:
@@ -62,21 +58,17 @@ app needs to run:
 $ rake db:seed
 ```
 
-##### Self Check Question
-
 <details>
-  <summary>What seed data was inserted and where was it specified?
+  <summary><strong>Self Check Question:</strong> What seed data was inserted and where was it specified?
 (Hint: `rake -T db:seed` explains the seed task; `rake -T` explains
 other available Rake tasks)</summary>
   <p><blockquote>A set of movie data which is specified in `db/seeds.rb`</blockquote></p>
 </details>
 
-------
-
 At this point you should be able to run the app locally (`rails server`)
 and navigating to `http://localhost:3000/movies` in your browser.  If you are using c9, use `rails s -p $PORT -b $IP` and navigate to the link generated within c9.
 
-## Preparation: deploy to Heroku
+## Part 0: Preparation: deploy to Heroku
 
 If you have deployed to Heroku before, just create a new app container
 with `heroku create`.  If this is your first time deploying to Heroku,
@@ -138,7 +130,7 @@ opens your browser to that URL in case you forgot it.
 the above successfully, or you won't be able to receive a grade for this
 assignment!
 
-# Part 1: Sort the list of movies (15 points)
+## Part 1: Sort the list of movies (15 points)
 
 On the list of all movies page, make the column headings for "Movie Title"
 and "Release Date" into clickable links. Clicking one
@@ -174,7 +166,7 @@ should have the HTML element id `release_date_header`.  The table
 containing the list of movies should have the HTML element id `movies`
 (this has already been set for you by the starter code).
 
-## Hints and caveats:
+### Hints and caveats:
 
 * The current RottenPotatoes views use the Rails-provided "resource-based
 routes" helper `movies_path` to generate the correct URI for the movies
@@ -193,7 +185,7 @@ the database, look at the
 collection itself--its job is just to show stuff. The controller should
 spoon-feed the view exactly what is to be displayed.  
 
-## Submission
+### Submission
 
 You'll submit the code for this part after you deploy on Heroku and when
 you supply your Heroku deployment URL in part 3.
@@ -207,7 +199,7 @@ $ git commit -a -m "part 1 complete"
 $ git push heroku master
 ```
 
-# Part 2: Filter the list of movies by rating (15 points)
+## Part 2: Filter the list of movies by rating (15 points)
 
 Enhance RottenPotatoes as follows. At the top of the All Movies listing,
 add some checkboxes that allow the user to filter the list to show only
@@ -261,7 +253,7 @@ Regarding (ii), you'll probably end up replacing `Movie.all` in the
 controller method with `Movie.where`, which has various options to help you
 restrict the database query. 
 
-## IMPORTANT for grading purposes
+### IMPORTANT for grading purposes
 
 * Your form tag should have the id `ratings_form`.
 * The form submit button for filtering by ratings should have an HTML
@@ -270,7 +262,7 @@ element id of `ratings_submit`
 where the interpolated rating should be the rating itself, such as
 `ratings_PG-13`, `ratings_G`, and so on.
 
-## Hints and caveats
+### Hints and caveats
 
 Make sure that you don't break the sorted-column functionality you added
 previously! That is, sorting by column headers should still work, and if
@@ -304,7 +296,7 @@ $ git commit -a -m "part 2 complete"
 $ git push heroku master
 ```
 
-# Part 3: Remember the sorting and filtering settings (70 points)
+## Part 3: Remember the sorting and filtering settings (70 points)
 
 OK, so the user can now click on the "Movie Title" or "Release Date"
 headings and see movies sorted by those columns, and can additionally
@@ -332,7 +324,7 @@ session with `session.clear` or selectively delete things from it with
 selectively apply the settings from the `session[]` even if the incoming
 URI doesn’t have the appropriate `params[]` set. 
 
-## Hints and caveats
+### Hints and caveats
 
 If the user explicitly includes new sorting/filtering settings in
 `params[]`, the session should not override them. Instead, these new
@@ -354,7 +346,7 @@ your additional redirect will delete that message and it will never
 appear, since the `flash[]` only survives across a single redirect. To fix
 this, use `flash.keep` right before your additional redirect. 
 
-## When you're done with this part
+### When you're done with this part
 
 Deploy to Heroku by following the same process as before:
 
