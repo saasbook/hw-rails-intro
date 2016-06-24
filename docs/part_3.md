@@ -59,3 +59,5 @@ Deploy to Heroku by following the same process as before:
 $ git commit -a -m "part 3 complete"
 $ git push heroku master
 ```
+
+Next: [Submission](../README.md#how-to-submit-when-youre-all-done)
