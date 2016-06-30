@@ -4,7 +4,7 @@ The actual RottenPotatoes starter app you will use is in another public
 repo: [saasbook/rottenpotatoes-rails-intro](https://github.com/saasbook/rottenpotatoes-rails-intro).  Clone that repo onto your development computer:
 
 ```sh
-$ git clone git@github.com:saasbook/rottenpotatoes-rails-intro
+$ git clone https://github.com/saasbook/rottenpotatoes-rails-intro
 ```
 
 Whenever you start working on a Rails project, the first thing you
