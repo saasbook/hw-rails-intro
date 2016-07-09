@@ -54,8 +54,8 @@ and
 $ heroku run rake db:seed
 ```
 
-Now you should be able to navigate to your app's URL.  `heroku open`
-opens your browser to that URL in case you forgot it.
+Now you should be able to navigate to your app's URL. `heroku domains`
+will print the URI in the console in case you forgot it.
 
 **Note:** don't proceed past this point until you are able to complete
 the above successfully, or you won't be able to receive a grade for this
