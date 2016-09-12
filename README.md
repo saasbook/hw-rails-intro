@@ -16,12 +16,17 @@ changed in each file since your last “good” commit.
 **Remember, commit early and often!**
 
 ## Assignment Contents
-
-* Part 0 (A): [Preparation: get RottenPotatoes running locally](docs/part_0_A.md)
-* Part 0 (B): [Preparation: deploy to Heroku](docs/part_0_B.md)
-* Part 1: [Sort the list of movies (15 points)](docs/part_1.md)
-* Part 2: [Filter the list of movies by rating (15 points)](docs/part_2.md)
-* Part 3: [Remember the sorting and filtering settings (70 points)](docs/part_3.md)
+ls-intro
+* Part 0 (A): [Preparation: get RottenPotatoes running locally]
+(../blob/master/docs/part_0_A.md)
+* Part 0 (B): [Preparation: deploy to Heroku]
+(../blob/master/docs/part_0_B.md)
+* Part 1: [Sort the list of movies (15 points)]
+(../blob/master/docs/part_1.md)
+* Part 2: [Filter the list of movies by rating (15 points)]
+(../blob/master/docs/part_2.md)
+* Part 3: [Remember the sorting and filtering settings (70 points)]
+(../blob/master/docs/part_3.md)
 
 # How to submit when you're all done
 
