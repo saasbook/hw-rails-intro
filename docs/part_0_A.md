@@ -31,7 +31,7 @@ place this file under version control.** </blockquote></p>
 
 <details>
   <summary><strong>Self Check Question:</strong> What tables got created by the migrations?</summary>
-  <p><blockquote>The Movies table</blockquote></p>
+  <p><blockquote>The movies table and the rails-internal schema_migrations table</blockquote></p>
 </details>
 
 Now insert "seed data" into the database--initial data items that the
