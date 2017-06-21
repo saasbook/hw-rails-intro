@@ -66,7 +66,7 @@ where the interpolated rating should be the rating itself, such as
 Make sure that you don't break the sorted-column functionality you added
 previously! That is, sorting by column headers should still work, and if
 the user then clicks the "Movie Title" column header to sort by movie
-title, the displayed results should both be sorted but do not need to be
+title, the displayed results should be sorted but do not need to be
 limited by the checked ratings (we'll get to that in part 3). 
 
 If the user checks (say) **G** and **PG** and then redisplays the list, the
