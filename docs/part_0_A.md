@@ -4,7 +4,7 @@ The actual RottenPotatoes starter app you will use is in another public repo: [s
 clone your fork:
 
 ```sh
-$ git clone https://github.com/your_github_username/rottenpotatoes-rails-intro
+$ git clone git@github.com:your_github_username/rottenpotatoes-rails-intro.git
 ```
 
 Whenever you start working on a Rails project, the first thing you should do is to run Bundler, to make sure all the app's gems are installed.  Switch to the app's root directory (presumably `rottenpotatoes-rails-intro`) and run `bundle install --without production` (you only need to specify `--without production` the first time, as this setting will be remembered on future runs of Bundler for this project).
