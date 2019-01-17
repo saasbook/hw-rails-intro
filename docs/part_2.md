@@ -23,7 +23,20 @@ You will also need code that knows (i) how to figure out which boxes the user ch
 
 Regarding (i), try viewing the source of the movie listings with the checkbox form, and you'll see that the checkboxes have field names like `ratings[G]`, `ratings[PG]`, etc. This trick will cause Rails to aggregate the values into a single hash called `ratings`, whose keys will be the names of the checked boxes only, and whose values will be the value attribute of the checkbox (which is "1" by default, since we didn't specify another value when calling the `check_box_tag` helper). That is, if the user checks the **G** and **R** boxes, `params` will include as one if its values `:ratings=>{"G"=>"1", "R"=>"1"}`. Check out the `Hash` documentation for an easy way to grab just the keys of a hash, since we don't care about the values in this case (checkboxes that weren't checked don't appear in the `params` hash at all).
 
-Regarding (ii), you'll probably end up replacing `Movie.all` in the controller method with `Movie.where`, which has various options to help you restrict the database query. 
+Regarding (ii), you'll probably end up replacing `Movie.all` in the
+controller method.  Since most
+interesting code should go in the model rather than exposing details
+of the schema to the controller, consider defining a
+class-level method in the model such as `Movie.with_ratings(ratings)`
+that takes an array of ratings (e.g. `["r", "pg-13"]`) and returns an
+ActiveRecord relation of movies whose rating matches
+(case-insensitively) anything in that array.  To do its job, this
+method can make use of `Movie.where`, which has various options to
+help you restrict the database query.  **Hint:** read the
+[documentation](https://api.rubyonrails.org/v4.2) about
+`ActiveRecord::Base` (on the docs page, click the flippy triangle next
+to the class name `ActiveRecord` and find the interior class `Base`)
+for examples of how to use `where` to do queries like this.
 
 ### IMPORTANT for grading purposes
 
