@@ -9,7 +9,7 @@ When the Refresh button is pressed, the list of movies is redisplayed showing on
 This will require a couple of pieces of code. We have provided the code that generates the checkboxes form, which you can include in the `index.html.erb` template:
 
 ```erb
-<%= form_tag movies_path, method: :get do %>
+<%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
   Include:
   <% @all_ratings.each do |rating| %>
     <div class="form-check  form-check-inline">
@@ -17,7 +17,7 @@ This will require a couple of pieces of code. We have provided the code that gen
       <%= check_box_tag "ratings[#{rating}]", rating, class: 'form-check-input' %>
     </div>
   <% end %>
-  <%= submit_tag 'Refresh', class: 'btn btn-primary' %>
+  <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
 <% end %>
 ```
 
@@ -37,11 +37,24 @@ that takes an array of ratings (e.g. `["r", "pg-13"]`) and returns an
 ActiveRecord relation of movies whose rating matches
 (case-insensitively) anything in that array.  To do its job, this
 method can make use of `Movie.where`, which has various options to
-help you restrict the database query.  **Hint:** read the
+help you restrict the database query.  
+
+**Hint 1:** read the
 [documentation](https://api.rubyonrails.org/v4.2) about
 `ActiveRecord::Base` (on the docs page, click the flippy triangle next
 to the class name `ActiveRecord` and find the interior class `Base`)
-for examples of how to use `where` to do queries like this.
+for examples of how to use `where` to do queries like this.  Note that
+a clause of the form `where('attribute' => value_list)`, if
+`value_list` is an array or collection containing `v1,v2,v3,` etc., 
+will be translated to the SQL constraint `WHERE attribute IN
+(v1,v2,v3)`, etc.  (This is different from what happens if
+`value_list` is a scalar, in which case a SQL equality check is
+generated.) 
+
+**Hint 2:** To make matching case-insensitive, since ratings in the
+database are stored as uppercase, consider forcing the list of ratings
+passed to `Movie.with_ratings` to be all uppercase.  You may find the
+`String#upcase` method useful, as well as `map`.
 
 ### IMPORTANT for grading purposes
 
