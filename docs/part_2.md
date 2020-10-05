@@ -1,88 +1,118 @@
-## Part 2: Filter the list of movies by rating (15 points)
+## Part 2: Sort the list of movies (15 points)
 
-Enhance RottenPotatoes as follows. At the top of the All Movies listing, add some checkboxes that allow the user to filter the list to show only movies with certain MPAA ratings:
+On the list of all movies page, make the column headings for "Movie
+Title" and "Release Date" into clickable links. Clicking one of them
+should cause the list to be reloaded but sorted in ascending order on
+that column. For example, clicking the "release date" column heading
+should redisplay the list of movies with the earliest-released movies
+first; clicking the "title" header should list the movies
+alphabetically by title. (For movies whose names begin with
+non-letters, the sort order should match the behavior of
+`String#<=>`.) 
 
-![Screenshot. The filter should be included somewhere below the page heading. It should have a checkbox for each rating, followed by a "Refresh" button.](../filter-screenshot.png)
+When the listing page is redisplayed with sorting-on-a-column enabled,
+the column header that was selected for sorting should appear with a
+yellow-orange background, as shown below. The selected column header
+should also have 2 additional CSS classes added to it: 1) `hilite`,
+and 2) a utility class from the [Bootstrap
+Colors](https://getbootstrap.com/docs/4.5/utilities/colors/) set. You
+should do this by setting controller variables that are used to
+conditionally set the CSS class of the appropriate table heading to
+these new classes. 
 
-When the Refresh button is pressed, the list of movies is redisplayed showing only those movies whose ratings were checked.
+The result should look something like this:
 
-This will require a couple of pieces of code. We have provided the code that generates the checkboxes form, which you can include in the `index.html.erb` template:
+![Screenshot showing the "Movie Title" column selected with a yellow background.](../table-header-screenshot.png)
 
-```erb
-<%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
-  Include:
-  <% @all_ratings.each do |rating| %>
-    <div class="form-check  form-check-inline">
-      <%= label_tag "ratings[#{rating}]", rating, class: 'form-check-label' %>
-      <%= check_box_tag "ratings[#{rating}]", rating, class: 'form-check-input' %>
-    </div>
-  <% end %>
-  <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
-<% end %>
-```
+**Note.** Initially, you will probably find that when you click on a
+sort column, the app will "forget" which checkboxes have been
+checked.   Similarly, when you sort on a column but then you change
+which checkboxes are checked, the app will "forget" the desired sort
+order.  We'll fix these cases next.
 
-BUT, you have to do a bit of work to use the above code:
-As you can see, it expects the variable `@all_ratings` to be an enumerable collection of all possible values of a movie rating, such as `['G','PG','PG-13','R']`. The controller method needs to set up this variable. And since the possible values of movie ratings are really the responsibility of the Movie model, it's best if the controller sets this variable by consulting the Model. Hence, you should create a class method of `Movie` that returns an appropriate value for this collection.
+**IMPORTANT for grading purposes:**
 
-You will also need code that knows: (i) how to figure out which boxes the user checked and (ii) how to restrict the database query based on that result.
+The link (that is, the `<a>` tag) for sorting by "title" should have the HTML element id `title_header`, and the link for sorting by release date should have the HTML element id `release_date_header`.  The table containing the list of movies should have the HTML element id `movies` (this has already been set for you by the starter code).
 
-Regarding (i), try viewing the source of the movie listings with the checkbox form, and you'll see that the checkboxes have field names like `ratings[G]`, `ratings[PG]`, etc. This trick will cause Rails to aggregate the values into a single hash called `ratings`, whose keys will be the names of the checked boxes only, and whose values will be the value attribute of the checkbox (which is "1" by default, since we didn't specify another value when calling the `check_box_tag` helper). That is, if the user checks the **G** and **R** boxes, `params` will include as one if its values `:ratings=>{"G"=>"1", "R"=>"1"}`. Check out the `Hash` documentation for an easy way to grab just the keys of a hash, since we don't care about the values in this case (checkboxes that weren't checked don't appear in the `params` hash at all).
 
-Regarding (ii), you'll probably end up replacing `Movie.all` in the
-controller method. Since most
-interesting code should go in the model rather than exposing details
-of the schema to the controller, consider defining a
-class-level method in the model such as `Movie.with_ratings(ratings)`
-that takes an array of ratings (e.g. `["r", "pg-13"]`) and returns an
-ActiveRecord relation of movies whose rating matches
-(case-insensitively) anything in that array.  To do its job, this
-method can make use of `Movie.where`, which has various options to
-help you restrict the database query.  
+### Hint: Adding parameters to existing RESTful routes
 
-**Hint 1:** read the
-[documentation](https://api.rubyonrails.org/v4.2) about
-`ActiveRecord::Base` (on the docs page, click the flippy triangle next
-to the class name `ActiveRecord` and find the interior class `Base`)
-for examples of how to use `where` to do queries like this.  Note that
-a clause of the form `where('attribute' => value_list)`, if
-`value_list` is an array or collection containing `v1,v2,v3,` etc., 
-will be translated to the SQL constraint `WHERE attribute IN
-(v1,v2,v3)`, etc.  (This is different from what happens if
-`value_list` is a scalar, in which case a SQL equality check is
-generated.) 
 
-**Hint 2:** To make matching case-insensitive, since ratings in the
-database are stored as uppercase, consider forcing the list of ratings
-passed to `Movie.with_ratings` to be all uppercase.  You may find the
-`String#upcase` method useful, as well as `map`.
+The current RottenPotatoes views use the Rails-provided
+"resource-based routes" helper `movies_path` to generate the correct
+URI for the movies index page. You may find it helpful to know that if
+you pass this helper method a hash of additional parameters, those
+parameters will be parsed by Rails and available in the `params[]`
+hash.  To play around with this behavior, you can [test out routes in
+the Rails
+console](https://stackoverflow.com/questions/1397644/testing-routes-in-the-console).
+(How did I find this secret information?  I Googled "test routes in
+rails console".)
 
-### IMPORTANT for grading purposes
+So, when you are converting those column headers into clickable
+links (for which it's best to use the `link_to` helper) that point to
+the RESTful route for fetching the movie list (best done using the
+route helper `movies_path()`, think about
+how you might modify the call that generates the route helper in order
+to include information visible in `params` that would tell you which
+column header was clicked.  **Hint:** Remember that every parameter in
+a route has a key and a value, so any argument you pass to
+`movies_path` would have to be a hash.
 
-* Your form tag should have the id `ratings_form`.
-* The form submit button for filtering by ratings should have an HTML
-element id of `ratings_submit`
-* Each checkbox should have an HTML element id of `ratings_#{rating}`,
-where the interpolated rating should be the rating itself, such as
-`ratings_PG-13`, `ratings_G`, and so on.
+### Hint: displaying things in the right order
 
-### Hints and caveats
+* Databases are pretty good at returning collections of rows in sorted order according to one or more attributes. Before you rush to sort the collection returned from the database, look at the [documentation](http://api.rubyonrails.org/v4.2.11/) for `ActiveRecord.order` and see if you can get the database to do the work for you.
 
-Make sure that you don't break the sorted-column functionality you added previously! That is, sorting by column headers should still work, and if the user then clicks the "Movie Title" column header to sort by movie title, the displayed results should be sorted but do not need to be limited by the checked ratings (we'll get to that in part 3).
+Don't put code in your views! The view shouldn't have to sort the collection itself—its job is just to show stuff. The controller should spoon-feed the view exactly what is to be displayed.
 
-If the user checks (say) **G** and **PG** and then redisplays the list, the checkboxes that were used to filter the output should appear checked when the list is redisplayed. This will require you to modify the checkbox form slightly from the version we provided above.
+## Remembering both the sort order and filtering order
 
-The first time the user visits the page, all checkboxes should be checked by default (so the user will see all movies). For now, ignore the case when the user unchecks all checkboxes—you will get to this in the next part.
+At this point, you should have sort columns working, but you probably
+noticed that sorting on a column "forgets" the values of which
+checkboxes were checked.  Let's fix that.
 
-__Labels__: You may notice that we have included a HTML `label` alongside the checkbox. These labels are critical for a properly functioning form! Primarily, they tell users what checkbox they are about to select. However, labels also provide built-in accessibility features (such as for blind users, so they too know what each checkbox does) or handy shortcuts like clicking "G" to apply the "G" checkbox. (On a phone, for example, this means users are less likely to tap on the wrong action.)
+The key to fixing it is to remember that when we constructed the form
+for the checkboxes in part 1, the only thing that was needed to pass
+the info to the controller about which checkboxes were checked.  For
+example, if the boxes whose field names were `ratings_G` and
+`ratings_PG` were checked, `params[:ratings]` would contain a hash 
+`{'G': '1', 'PG': '1'}`.  (HTML allows a checked box to be given any
+value, but we chose "1" which is conventional since the value is
+usually irrelevant, since if the checkbox is not checked, it doesn't
+appear in the submitted form values at all.)
 
-_Styling_: We've included some default Bootstrap styling. This is not required to make your form work, but it's a comming pattern. You are welcome to tweak the CSS classes applied to the form as long as the application works correctly.
+So if we could _also_ include this info in the link when the user
+clicks a column name, the info would be passed into the controller
+action along with the column name itself!
 
-Reminder: Don't put code in your views! Set up an instance variable in the controller that remembers which ratings were actually used to do the filtering, and make that variable available to the view so that the appropriate boxes can be pre-checked when the index view is reloaded.
+Now, the view already knows that the value `@ratings_to_show` is
+an array containing only the values for the
+boxes that were checked--for example, something like `['G','R']`.  But
+to make it look right for `params`, we need to pass `movies_path()`
+something that looks more like `['G':'1', 'R':'1']` (or really, any
+value other than `'1'` is fine, since it's just the presence of the
+key that matters).
 
-You'll submit this part after you deploy on Heroku and when you supply your Heroku deployment URL in part 3. But you can commit all the changes you have made so far to git, deploy them to Heroku and check that they work on Heroku before moving on to the next section:
+Judiciously using Google, find a concise way to derive a hash whose
+keys are the values of an array, and whose value for all the keys is
+some constant like `'1'`.
+With that in hand,, modify the arguments to the `movies_path()` route
+helper already used by your column headers to include that hash, such that the information
+about which checkboxes were checked on the form appears as part of the
+route.
+
+At this point, you should be able to refresh the view by _either_
+clicking on a column header _or_ clicking the Refresh button, and both
+types of changes should be "remembered".
+
+### Submission
+
+You'll submit the code for this part after you deploy on Heroku and when you supply your Heroku deployment URL in part 3.
+
+For now, commit all the changes you have made so far, and deploy them to check that they work on Heroku before moving on to the next section:
 
 ```sh
-$ git commit -am "part 2 complete"
+$ git commit -am "part 1 complete"
 $ git push heroku master
 ```
 

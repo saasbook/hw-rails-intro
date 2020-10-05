@@ -1,21 +1,87 @@
 
-## Part 3: Remember the sorting and filtering settings (70 points)
+## Part 3: Really remember the sorting and filtering settings (70 points)
 
-OK, so the user can now click on the "Movie Title" or "Release Date" headings and see movies sorted by those columns, and can additionally use the checkboxes to restrict the listing to movies with certain ratings only. And we have preserved RESTfulness, because the URI itself always contains the parameters that will control sorting and filtering.
+OK, so the user can now click on the "Movie Title" or "Release Date"
+headings and see movies sorted by those columns, and can additionally
+use the checkboxes to restrict the listing to movies with certain
+ratings only. And we have preserved RESTfulness, because the URI
+itself always contains the parameters that will control sorting and
+filtering.  And changing one setting doesn't forget the other
+settings.  We did all this by carefully controlling which parameters
+get passed in either the form submit button (which uses `GET`) or the
+column headers (regular `<a>` hyperlinks, which also use `GET`).
 
-The last step is to remember these settings. That is, if the user has selected any combination of column sorting and restrict-by-rating constraints, and then the user clicks to see the details of one of the movies (for example), when she clicks the Back to Movie List on the detail page, the movie listing should "remember" her sorting and filtering settings from before.
+But there's one more problem. If you navigate away from the Index view (say, to view
+the details of a movie) and then click the Back to List button to go
+back to the Index view, it seems to forget the sorting and filtering
+settings as well.  (Go ahead and verify this.)
 
-(Clicking away from the list to see the details of a movie is only one example; the settings should be remembered regardless what actions the user takes, so that any time she visits the index page, the settings are correctly reinstated.)
+<details>
+<summary>
+Why is the sorting/checkbox-filtering setting "forgotten" when you
+navigate to a Movie Details page and then click the Back to List button?
+</summary>
+<blockquote>
+The Back to List button is just a link for the RESTful route `GET
+/movies`, but in parts 1 and 2, we have been adding extra parameters
+to the route (in both the form submission and the column header links)
+to encode those settings. 
+</blockquote>
+</details>
 
-The best way to do the "remembering" will be to use the `session[]` hash. The session is like the `flash[]`, except that once you set something in the `session[]` it is remembered "forever" until you reset the session with `session.clear` or selectively delete things from it with `session.delete(:some_key)`. That way, in the `index` method, you can selectively apply the settings from the `session[]` even if the incoming URI doesn’t have the appropriate `params[]` set. _The `session` relies on browser cookies. Users who reset or clear their cookies will also reset the session for RottenPotatoes (and many other sites)._
+So the last step is to remember these settings even if the user
+navigates away from and then back to the list of movies. 
+
+Fortunately, HTTP-based SaaS has a way to "remember" state across
+otherwise-stateless requests: cookies.  In Rails, the `session[]` hash
+provides a nice abstraction for using cookies: anything you put in
+there will basically be preserved for as long as that user's browser
+continues to correctly maintain cookies for your app.
+(In other words, comparing it to something you've seen before, the
+session is like the `flash[]`, except that once you set 
+something in the `session[]` it is remembered "forever" until you
+reset the session with `session.clear` or selectively delete things
+from it with `session.delete(:some_key)`.)
+
+**A big caveat:** Since the default storage for the contents of
+`session` is a browser cookie, (a) users who reset or
+clear their cookies will also reset the session for RottenPotatoes
+(and many other sites), and (b) the contents of the `session`, once
+serialized, cannot exceed the size of an HTTP cookie (4 KiB).
 
 ### Hints and caveats
 
-If the user explicitly includes new sorting/filtering settings in `params[]`, the session should not override them. Instead, these new settings should be remembered in the session.
+Once you have determined the correct sorting and filtering settings,
+before you render the view, use `session[]` to hold on to the those settings.
 
-If a user unchecks all checkboxes, use the settings stored in the `session[]` hash, since it doesn't make sense for a user to uncheck all the boxes.
+Now modify the `index` action to detect whether _no_ `params[]` were
+passed that indicate sorting or filtering: this would be one way to
+tell that the user is landing on the home page _not_ having followed
+one of the special links we made in parts 1 and 2. 
 
-To be RESTful, we want to preserve the property that a URI that results in a sorted/filtered view always contains the corresponding sorting/filtering parameters. Therefore, if you find that the incoming URI is lacking the right `params[]` and you're forced to fill them in from the `session[]`, the RESTful thing to do is to `redirect_to` the new URI containing the appropriate parameters. There is an important corner case to keep in mind here, though: if the previous action had placed a message in the `flash[]` to display after a redirect to the movies page, your additional redirect will delete that message and it will never appear, since the `flash[]` only survives across a single redirect. To fix this, use `flash.keep` right before your additional redirect.
+<details>
+<summary>
+What might be some other ways to tell if this is the case?
+</summary>
+<blockquote>
+One possibility is to look at the HTTP `Referer` [sic] header, which
+tells what page the user just came from when following a link.
+(Exercise: check the Rails docs to learn how to get access to the
+headers.)  However, to keep things at the same level of abstraction,
+it's more reliable to use `params`.  We could, e.g., add a special
+value in `params` for the links served on the home page that
+explicitly marks the links as being on the home page, say
+`params[:home]=1`.  Then the absence of `params[:home]` means the user
+got to the home page from someplace else.
+</blockquote>
+</details>
+
+
+Be  careful: If the user explicitly includes new sorting/filtering
+settings in `params[]`, the new values of those settings should then
+be saved.
+
+As before, if a user unchecks all checkboxes, it means "display all ratings."
 
 ### When you're done with this part
 
@@ -32,4 +98,3 @@ For Berkeley students, please push your code to your remote repository:
 $ git push origin master
 ```
 
-Next: [Submission](../README.md#how-to-submit-when-youre-all-done)
