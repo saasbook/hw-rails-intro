@@ -153,4 +153,10 @@ $ git commit -am "part 2 complete"
 $ git push heroku master
 ```
 
+**NOTE!** Be sure that you have used `git add` to add all the new
+files you've created!  If in doubt, use `git status` to show which
+files Git thinks it does not know about.  A common pitfall is
+forgetting to add some files, and then when the app is deployed to
+Heroku, it fails because some files are missing.
+
 Next: [Part 2: Sort the list of movies by title or release date](part_2.md)
