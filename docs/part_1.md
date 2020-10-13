@@ -149,7 +149,7 @@ the controller.
 You'll submit this part after you deploy on Heroku and when you supply your Heroku deployment URL in part 3. But you can commit all the changes you have made so far to git, deploy them to Heroku and check that they work on Heroku before moving on to the next section:
 
 ```sh
-$ git commit -am "part 2 complete"
+$ git commit -am "part 1 complete"
 $ git push heroku master
 ```
 

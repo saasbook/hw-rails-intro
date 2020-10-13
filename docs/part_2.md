@@ -112,7 +112,7 @@ You'll submit the code for this part after you deploy on Heroku and when you sup
 For now, commit all the changes you have made so far, and deploy them to check that they work on Heroku before moving on to the next section:
 
 ```sh
-git commit -am "part 1 complete"
+git commit -am "part 2 complete"
 git push heroku master
 ```
 
