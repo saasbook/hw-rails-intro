@@ -1,0 +1,10 @@
+<div class="container g-5 p-2">
+  <div class="row">
+    <% flash.each do |key, message| %>
+      <div class="alert <%= bootstrap_alert_class(key) %> alert-dismissible fade show g-3" role="alert">
+        <%= message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+  </div>
+</div>

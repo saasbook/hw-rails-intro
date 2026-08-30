@@ -1,0 +1,22 @@
+/* Application-specific styles, layered on top of Bootstrap. */
+
+body {
+  margin-top: 50px;
+}
+
+.navbar.navbar-dark {
+  background-color: #003366; /* Berkeley Blue */
+}
+
+.navbar-brand {
+  color: #fff; /* White text for the title */
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* White text for the Login link */
+}
+
+th.bg-info > a,
+th.bg-info > a:visited {
+  color: #FFF;
+}

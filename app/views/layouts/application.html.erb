@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Rottenpotatoes</title>
+    <title>Rotten Potatoes</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# Bootstrap 5 provides the CSS framework (and the JavaScript behind the
+        navbar toggle and dismissible flash messages) used by RottenPotatoes. %>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous" defer></script>
+
+    <%# Our own styles come last so that they can override Bootstrap's. %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash' %>
+    <main class="container g-3 p-2">
+      <%= yield %>
+    </main>
   </body>
 </html>
