@@ -1,0 +1,13 @@
+<tr>
+  <%# The title identifies the row, so it is a header cell for that row. %>
+  <th scope="row"><%= movie.title %></th>
+  <td><%= movie.rating %></td>
+  <td><%= movie.release_date %></td>
+  <td>
+    <%# Every row's link says "More info", so the movie title is added for
+        screen readers to keep the links distinguishable from one another. %>
+    <%= link_to movie_path(movie), class: 'btn btn-primary btn-sm' do %>
+      More info<span class="visually-hidden"> about <%= movie.title %></span>
+    <% end %>
+  </td>
+</tr>

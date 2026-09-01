@@ -16,7 +16,11 @@ body {
   color: #fff; /* White text for the Login link */
 }
 
+/* The header of the sorted column is highlighted with Bootstrap's bg-info, a
+   light cyan, so its link has to stay dark to keep enough contrast to be
+   readable. (White on bg-info is a 1.9:1 contrast ratio, well below the 4.5:1
+   WCAG minimum; #212529 on bg-info is 8.3:1.) */
 th.bg-info > a,
 th.bg-info > a:visited {
-  color: #FFF;
+  color: #212529;
 }
