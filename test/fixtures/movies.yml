@@ -1,0 +1,11 @@
+one:
+  title: The Terminator
+  rating: R
+  description: A cyborg assassin is sent back in time.
+  release_date: 1984-10-26
+
+two:
+  title: Toy Story
+  rating: G
+  description: A group of toys comes to life.
+  release_date: 1995-11-22
