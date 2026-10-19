@@ -4,7 +4,7 @@ Deploying your finished app by the homework deadline is part of the grading proc
 
 Once you're confident the functionality works correctly on your deployed app, submit its URI in `rottenpotatoes-url.txt`, the empty text file at the top level of your app (in Codio, it's in the file tree to the left), with no other contents. If you don't have that file, create it.
 
-**Please be careful** to use **http** and not **https**: submit `http://your-app.onrender.com` **and NOT** `https://your-app.onrender.com` (on Heroku, likewise `http://your-app.herokuapp.com`). The live tests will fail to reach an app submitted with `https://`. Your browser will still show the app on `https`, which is fine and expected.
+Submit the URL exactly as your browser shows it, e.g. `https://your-app.onrender.com` (on Heroku, `https://your-app.herokuapp.com`). Either `https://` or `http://` works; the autograder falls back to `http://` if it cannot connect over `https://`.
 
 On Render, free services also sleep after 15 minutes of inactivity and take about a minute to wake up, so **open your app in a browser right before you submit** so that the live tests aren't waiting on a cold start.
 
